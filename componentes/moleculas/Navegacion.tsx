@@ -1,12 +1,29 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Navegacion = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [chatbotListo, setChatbotListo] = useState(false);
+  const [modo, setModo] = useState("oscuro");
 
   const toggleMenu = () => setMenuAbierto(!menuAbierto);
+
+  const toggleModo = () => {
+    setModo((prev) => (prev === "claro" ? "oscuro" : "claro"));
+  };
+
+  useEffect(() => {
+    const body = document.body;
+
+    if (modo === "claro") {
+      body.classList.add("modo-claro");
+      body.classList.remove("modo-oscuro");
+    } else {
+      body.classList.add("modo-oscuro");
+      body.classList.remove("modo-claro");
+    }
+  }, [modo]);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -20,7 +37,7 @@ const Navegacion = () => {
       configScript.async = true;
 
       configScript.onload = () => {
-        setChatbotListo(true); // ✅ Solo se activa cuando los dos scripts estén listos
+        setChatbotListo(true);
       };
 
       document.body.appendChild(configScript);
@@ -62,11 +79,31 @@ const Navegacion = () => {
           Oferta
         </a>
         <a className="enlace" href="/confiteria" onClick={toggleMenu}>
-          Confiteria
+          Confitería
+        </a>
+        <a
+          className="enlace"
+          href="/streming"
+          onClick={() => setMenuAbierto(false)}
+        >
+          Streming
+        </a>
+        <a
+          className="enlace"
+          href="https://coddy-kia.vercel.app/"
+          onClick={() => setMenuAbierto(false)}
+        >
+          Chatboot externo
         </a>
         <button className="enlace" onClick={abrirChatbot}>
           Chatbot
         </button>
+        {/* <button
+          className={`modo-btn ${modo === "claro" ? "claro" : "oscuro"}`}
+          onClick={toggleModo}
+        >
+          {modo === "claro" ? "Modo Oscuro " : "Modo Claro "}
+        </button> */}
       </div>
     </nav>
   );

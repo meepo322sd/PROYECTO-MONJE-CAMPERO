@@ -16,7 +16,7 @@ interface Props {
 const ListaPeliculas = ({ movies }: Props) => {
   return (
     <>
-      <h2>Monje campero</h2>
+      <h2> Monje campero</h2>
       <div className="container">
         <div className="movieList">
           {movies.map((movie) => (

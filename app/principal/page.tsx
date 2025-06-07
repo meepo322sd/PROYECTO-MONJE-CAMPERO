@@ -1,6 +1,7 @@
 import Footer from "@/componentes/moleculas/Footer";
 import Header from "@/componentes/moleculas/Header";
 import ListaPeliculas from "@/componentes/organismos/ListaPeliculas";
+import Prueba from "@/componentes/organismos/Prueba";
 import Link from "next/link";
 import React from "react";
 
@@ -92,11 +93,12 @@ const Lista: React.FC = () => {
     },
   ];
   return (
-    <>
+    <div className="cambio">
       <Header />
       <ListaPeliculas movies={movies} />
+
       <Footer />
-    </>
+    </div>
   );
 };
 

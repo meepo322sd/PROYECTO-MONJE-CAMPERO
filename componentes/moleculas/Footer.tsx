@@ -5,15 +5,15 @@ const Footer = () => {
     <footer className="pie-pagina">
       <div className="sociales">
         <div className="redes-sociales">
-          <a href="#">
+          <a href="#" className="enlaces-feos">
             <img className="icono-red" src="/facebook.png" alt="Facebook" />
             <p>Facebook</p>
           </a>
-          <a href="#">
+          <a href="#" className="enlaces-feos">
             <img className="icono-red" src="/tiktok.png" alt="TikTok" />
             <p>TikTok</p>
           </a>
-          <a href="#">
+          <a href="#" className="enlaces-feos">
             <img className="icono-red" src="/instagram.png" alt="Instagram" />
             <p>Instagram</p>
           </a>
@@ -21,7 +21,10 @@ const Footer = () => {
       </div>
 
       <div className="creditos">
-        <p className="negro">Creado por Yhonatan Leonardo Mamani Torrez ©</p>
+        <p className="negro">
+          Monje Campero © — Disfruta la mejor experiencia de cine con películas
+          y entretenimiento únicos.
+        </p>
       </div>
     </footer>
   );
